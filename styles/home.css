@@ -19,7 +19,31 @@
 html {
   scroll-behavior: smooth;
 }
-
+.loadingCont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--header-bg-color);
+  z-index: 4;
+}
+.loadingCont img {
+  max-width: 100px;
+  border-radius: 50%;
+  animation: loading 0.4s linear alternate infinite;
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
 .container {
   max-width: 1366px;
   margin: 0 auto;
@@ -136,6 +160,32 @@ header section > div .headerDiv .lowDisplayShoing .searchIcon {
   color: var(--font-color);
   flex-basis: 10%;
   height: 100%;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont {
+  width: 100%;
+  height: 0;
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont.active {
+  height: 50px;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont input {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  padding: 5px 20px;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont button {
+  padding: 5px;
+  font-size: 25px;
+  background-color: transparent;
+  border: 0;
 }
 header section > div .headerDiv .mainMenu {
   height: 100%;
@@ -296,8 +346,7 @@ main section.lastSection div > div.lastSectionDiv .imgCont img {
   top: 0;
   max-width: max-content;
 }
-main section.lastSection div > div.lastSectionDiv .itemsCont .options {
-}
+
 main section.lastSection div > div.lastSectionDiv .itemsCont .options ul {
   width: 100%;
   display: grid;
@@ -321,6 +370,7 @@ main
   color: #6b6b6b;
   font-size: 16px;
   position: relative;
+  transition: all 0.3s;
 }
 main
   section.lastSection
@@ -339,6 +389,7 @@ main
   bottom: 0;
   right: 0;
   background-color: #0c4707;
+  transition: all 0.3s;
 }
 main
   section.lastSection
