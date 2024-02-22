@@ -1,5 +1,6 @@
 const habergerIcon = document.querySelector(".habergerIcon");
 const headerDiv = document.querySelector(".headerDiv");
+const videoCont = document.querySelector(".videoCont");
 
 habergerIcon.addEventListener("click", () => {
   headerDiv.classList.toggle("showMenu");
@@ -27,4 +28,8 @@ $(document).ready(function () {
     lazyLoad: true,
     loop: true,
   });
+});
+
+videoCont.addEventListener("click", () => {
+  videoCont.children[0].controls = true;
 });
