@@ -5,6 +5,10 @@ const videoCont = document.querySelector(".videoCont");
 habergerIcon.addEventListener("click", () => {
   headerDiv.classList.toggle("showMenu");
 });
+window.addEventListener("scroll", () => {
+  if (scrollY > 50) headerDiv.classList.add("position");
+  else headerDiv.classList.remove("position");
+});
 $(document).ready(function () {
   $(".sliderCont").owlCarousel({
     rtl: true,
