@@ -504,6 +504,7 @@ footer section > div .footerDiv .soshalMedia {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-basis: 20%;
 }
 
 footer section > div .footerDiv .soshalMedia a {
