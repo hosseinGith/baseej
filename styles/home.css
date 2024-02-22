@@ -132,6 +132,7 @@ header section > div .headerDiv .lowDisplayShoing .searchIcon {
 header section > div .headerDiv .mainMenu {
   height: 100%;
   width: 55vw;
+  z-index: 3;
   max-width: 300px;
   position: fixed;
   left: 0;
