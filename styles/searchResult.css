@@ -1,0 +1,15 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main section > div #searchResultsCont {
+  grid-template-columns: repeat(auto-fit, minmax(300, 1fr));
+  padding: 30px 0;
+}
+main section > div #searchResultsCont .emptyResult {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #f5f5f5;
+}

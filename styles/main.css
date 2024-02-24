@@ -1,0 +1,321 @@
+@font-face {
+  font-family: vazir;
+  src: url("../assets/fonts/vazir/Vazir.ttf") format("truetype");
+  src: url("../assets/fonts/vazir/Vazir.woff") format("woff");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: vazir;
+}
+:root {
+  --font-color: #fff;
+  --header-bg-color: #000000f3;
+  --first-slider-border-color: #ff0000;
+}
+html {
+  scroll-behavior: smooth;
+}
+.loadingCont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--header-bg-color);
+  z-index: 4;
+}
+.loadingCont img {
+  max-width: 100px;
+  border-radius: 50%;
+  animation: loading 0.4s linear alternate infinite;
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+header section {
+  background-color: var(--header-bg-color);
+}
+header .headerSect.position {
+  width: 100%;
+  background-color: #000000a1;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+
+header section > div .headerDiv .highDisplayShoing {
+  display: none;
+}
+header section > div .headerDiv .highDisplayShoing ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header section > div .headerDiv .highDisplayShoing ul li {
+  width: 100%;
+}
+header section > div .headerDiv .highDisplayShoing ul li:hover a {
+  color: #ffff00;
+}
+header section > div .headerDiv .highDisplayShoing ul li.active a {
+  color: #ffff00;
+}
+header section > div .headerDiv .highDisplayShoing ul li a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 5px;
+  text-align: center;
+  color: var(--font-color);
+  transition: color 0.3s;
+}
+
+header section > div .headerDiv .highDisplayShoing ul li a img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}
+header section > div .headerDiv .lowDisplayShoing {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header section > div .headerDiv .lowDisplayShoing .habergerIcon {
+  width: 100%;
+  max-width: 50px;
+  max-height: 50px;
+  padding: 15px 10px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: transparent;
+  border: 0;
+  flex-basis: 15%;
+}
+header section > div .headerDiv .lowDisplayShoing .habergerIcon span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--font-color);
+  transition: all 0.5s;
+}
+header
+  section
+  > div
+  .headerDiv.showMenu
+  .lowDisplayShoing
+  .habergerIcon
+  span:first-child {
+  transform: translate(0, 10px) rotate(141deg);
+}
+header
+  section
+  > div
+  .headerDiv.showMenu
+  .lowDisplayShoing
+  .habergerIcon
+  span:nth-child(2) {
+  display: none;
+}
+header
+  section
+  > div
+  .headerDiv.showMenu
+  .lowDisplayShoing
+  .habergerIcon
+  span:last-child {
+  transform: translate(0, -6px) rotate(39deg);
+}
+header section > div .headerDiv .lowDisplayShoing .siteIcon {
+  display: inline-block;
+  height: max-content;
+  flex-basis: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+header section > div .headerDiv .lowDisplayShoing .siteIcon img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}
+header section > div .headerDiv .lowDisplayShoing .searchIcon {
+  background-color: transparent;
+  border: 0;
+  font-size: 18px;
+  color: var(--font-color);
+  flex-basis: 10%;
+  height: 100%;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont {
+  width: 100%;
+  height: 0;
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont.active {
+  height: 50px;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont input {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  padding: 5px 20px;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont button {
+  padding: 5px;
+  font-size: 25px;
+  background-color: transparent;
+  border: 0;
+}
+header section > div .headerDiv .mainMenu {
+  height: 100%;
+  width: 55vw;
+  z-index: 3;
+  max-width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-100%);
+  transition: transform 0.3s;
+  background-color: var(--header-bg-color);
+}
+header section > div .headerDiv .mainMenu nav ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+header section > div .headerDiv .mainMenu nav ul li {
+  width: 100%;
+}
+header section > div .headerDiv .mainMenu nav ul li:hover a {
+  color: #ffff00;
+}
+header section > div .headerDiv .mainMenu nav ul li a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+header section > div .headerDiv .mainMenu nav ul li.active a {
+  color: #ffff00;
+}
+header section > div .headerDiv .mainMenu nav ul li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 0;
+}
+header .headerSect.showMenu .mainMenu {
+  transform: translate(0%);
+}
+
+footer {
+  background: url("../assets/images/firstSecBgImg.jpg");
+}
+footer section {
+  background-color: var(--header-bg-color);
+}
+footer section > div .footerDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+}
+footer section > div .footerDiv .firstDiv {
+  border-bottom: 1px solid #ffffff71;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+footer section > div .footerDiv .firstDiv .iconSite {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+footer section > div .footerDiv .firstDiv .iconSite img {
+  width: 100%;
+}
+footer section > div .footerDiv nav {
+  width: 100%;
+  display: none;
+}
+footer section > div .footerDiv nav ul {
+  width: 50%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+footer section > div .footerDiv nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  opacity: 0.7;
+}
+footer section > div .footerDiv nav a {
+  color: #fff;
+}
+footer section > div .footerDiv .soshalMedia {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 20%;
+}
+
+footer section > div .footerDiv .soshalMedia a {
+  color: var(--font-color);
+  border-radius: 20px 10px;
+  padding: 10px 20px;
+  background-color: #808080;
+}
+
+footer section > div .footerDiv .soshalMedia a:nth-child(2) {
+  background-color: #e07b00;
+}
+footer section > div .footerDiv .lastDiv p {
+  margin: 10px 0;
+}
+@media screen and (width >992px) {
+  header section > div .headerDiv .highDisplayShoing {
+    display: block;
+  }
+  header section > div .headerDiv .lowDisplayShoing {
+    display: none;
+  }
+  footer section > div .footerDiv .firstDiv {
+    flex-direction: row;
+  }
+  footer section > div .footerDiv nav {
+    display: block;
+  }
+}
