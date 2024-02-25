@@ -4,6 +4,7 @@ function main() {
   const sliderCont = document.querySelector(".sliderCont");
   const sliderCont2 = document.querySelector(".sliderCont2");
   const sliderCont3 = document.querySelector(".sliderCont3");
+  const searchCont = document.querySelector(".searchCont");
 
   async function getData(api) {
     let data = await (await fetch(api)).json();
@@ -84,7 +85,13 @@ function main() {
   videoCont.addEventListener("click", () => {
     videoCont.children[0].controls = true;
   });
-
+  searchCont.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let a = document.createElement("a");
+    a.href = "./pages/searchResult/index.html";
+    localStorage.setItem("search", searchCont.children[0].value);
+    a.click();
+  });
   optionsSite.forEach((item) => {
     item.addEventListener("click", () => {
       optionsSite.forEach((ite) => {

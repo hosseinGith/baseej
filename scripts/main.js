@@ -15,11 +15,13 @@ closeSearch.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   loadingCont.parentElement.parentElement.remove();
 });
-console.log(habergerIcon);
 habergerIcon.addEventListener("click", () => {
   headerSect.classList.toggle("showMenu");
 });
 window.addEventListener("scroll", () => {
   if (scrollY > 50) headerSect.classList.add("position");
   else headerSect.classList.remove("position");
+});
+searchCont.children[0].addEventListener("input", () => {
+  searchCont.classList.remove("emptySearch");
 });

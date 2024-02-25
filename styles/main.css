@@ -176,6 +176,10 @@ header section > div .headerDiv .lowDisplayShoing .searchCont {
   background-color: #fff;
   overflow: hidden;
   transition: height 0.5s;
+  box-shadow: 0 0 4px #0000006e;
+}
+header section > div .headerDiv .lowDisplayShoing .searchCont.emptySearch {
+  border: 2px solid var(--first-slider-border-color);
 }
 header section > div .headerDiv .lowDisplayShoing .searchCont.active {
   height: 50px;
