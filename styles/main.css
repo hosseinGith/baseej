@@ -10,6 +10,8 @@
   text-decoration: none;
   list-style: none;
   font-family: vazir;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 :root {
   --font-color: #fff;
@@ -301,10 +303,17 @@ footer section > div .footerDiv .soshalMedia a {
   border-radius: 20px 10px;
   padding: 10px 20px;
   background-color: #808080;
+  transition: all 0.3s;
 }
-
+footer section > div .footerDiv .soshalMedia a:nth-child(2):hover {
+  background-color: #ff7b00;
+  box-shadow: 0px 2px 10px #ff7300;
+}
 footer section > div .footerDiv .soshalMedia a:nth-child(2) {
-  background-color: #e07b00;
+  background-color: #ff7b00;
+}
+footer section > div .footerDiv .soshalMedia a:hover {
+  background-color: #045701;
 }
 footer section > div .footerDiv .lastDiv p {
   margin: 10px 0;
