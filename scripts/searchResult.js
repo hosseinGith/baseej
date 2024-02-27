@@ -6,9 +6,10 @@ emptyContent.push(searchResultsCont.querySelector(".emptyResult"));
 searchResultsCont.querySelector(".emptyResult").remove();
 
 async function getData(api) {
-  let data = await (await fetch(api)).json();
+  let data = await (await fetch(api)).text();
   return data;
 }
+
 function createItems(item) {
   const a = document.createElement("a");
   const img = document.createElement("img");
@@ -22,6 +23,7 @@ function createItems(item) {
   searchResultsCont.appendChild(a);
 }
 async function checkItems() {
+  console.log(await createItems("../../sendData.php"));
   if (!searchValue) {
     titlePage.textContent = "نتیجه‌ای پیدا نشد.";
     searchResultsCont.children.length === 0
