@@ -6,7 +6,7 @@ emptyContent.push(searchResultsCont.querySelector(".emptyResult"));
 searchResultsCont.querySelector(".emptyResult").remove();
 
 async function getData(api) {
-  let data = await (await fetch(api)).text();
+  let data = await (await fetch(api)).json();
   return data;
 }
 
@@ -23,7 +23,6 @@ function createItems(item) {
   searchResultsCont.appendChild(a);
 }
 async function checkItems() {
-  console.log(await createItems("../../sendData.php"));
   if (!searchValue) {
     titlePage.textContent = "نتیجه‌ای پیدا نشد.";
     searchResultsCont.children.length === 0
