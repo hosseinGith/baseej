@@ -25,6 +25,7 @@ function createItems(item) {
 async function checkItems() {
   if (!searchValue) {
     titlePage.textContent = "نتیجه‌ای پیدا نشد.";
+    history.replaceState({}, document.title, ".");
     searchResultsCont.children.length === 0
       ? searchResultsCont.appendChild(emptyContent[0])
       : [];

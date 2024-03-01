@@ -82,9 +82,6 @@ function main() {
   createElementSlider2();
   createElementSlider3();
 
-  videoCont.addEventListener("click", () => {
-    videoCont.children[0].controls = true;
-  });
   searchCont.addEventListener("submit", (e) => {
     e.preventDefault();
     let a = document.createElement("a");
