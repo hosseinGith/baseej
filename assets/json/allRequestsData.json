@@ -1,0 +1,70 @@
+{
+  "homePageSlider1": [
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/test.png",
+      "underImgText": "محرم"
+    }
+  ],
+  "homePageSlider2": [
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/photo8151816374.jpg",
+      "underImgText": "رجب"
+    },
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/photo8151816374.jpg",
+      "underImgText": "رجب"
+    }
+  ],
+  "homePageSlider3": [
+    {
+      "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/IMG_20240304_083445_452.jpg"
+    }
+  ],
+  "homePageLastFetch": {
+    "public": [
+      {
+        "imgSrc": "https://gameshop.iapp.ir/site.php?fileSrc=images/11-1024x682.jpg",
+        "from": "موسسه رضوان",
+        "timeOut": "2024/5/8",
+        "title": "اولین همایش قوه ها",
+        "longText": "به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش آرامش قوها با"
+      }
+    ]
+  }
+}

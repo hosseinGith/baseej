@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
+    <link rel="preload" href="styles/home.css" as="style" />
+    <link rel="preload" href="styles/main.css" as="style" />
+    <link rel="preload" href="scripts/main.js" as="script" />
+    <link rel="preload" href="scripts/home.js" as="script" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/home.css" />
@@ -12,14 +17,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="icon" rel="preload" href="assets/images/icons/siteIcon.png" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="icon" href="assets/images/icons/siteIcon.png" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <meta
+      name="description"
+      content="this web site develop by hosseinderees7@gmail.com"
+    />
     <title>هیئت مکتب الزهراء</title>
   </head>
   <body>
@@ -38,7 +47,7 @@
               <ul>
                 <li class="active"><a href="./index.html">صفحه اصلی</a></li>
                 <li><a href="#">مجالس ثقلین</a></li>
-                <li><a href="#">چهارتا از مسؤلین</a></li>
+                <li><a href="#">موسسه رضوان</a></li>
                 <li><a href="#">مجتمع تربیتی</a></li>
                 <li>
                   <a href="./index.html">
@@ -73,7 +82,7 @@
                 <ul>
                   <li class="active"><a href="./index.html">صفحه اصلی</a></li>
                   <li><a href="#">مجالس ثقلین</a></li>
-                  <li><a href="#">چهارتا از مسؤلین</a></li>
+                  <li><a href="#">موسسه رضوان</a></li>
                   <li><a href="#">مجتمع تربیتی</a></li>
                   <li><a href="#">مرکز تحقیقات</a></li>
                   <li><a href="#">سرای هدایت</a></li>
@@ -144,7 +153,11 @@
               </div>
             </div>
             <div class="main">
-              <img src="assets/images/11-1024x682.jpg" />
+              <img
+                loading="lazy"
+                src="https://gameshop.iapp.ir/site.php?fileSrc=images/11-1024x682.jpg"
+                alt="xxx"
+              />
             </div>
             <div class="arrowControls">
               <button id="previewBtn">
@@ -205,27 +218,29 @@
           <div class="container">
             <div class="lastSectionDiv">
               <a href="#" class="imgCont">
-                <img src="assets/images/sdfsdry.png" alt="xxx" />
+                <img
+                  loading="lazy"
+                  src="https://gameshop.iapp.ir/site.php?fileSrc=images/sdfsdry.png"
+                  alt="xxx"
+                />
               </a>
               <div class="itemsCont">
                 <nav class="options">
                   <ul>
                     <li class="active"><button>همه</button></li>
-                    <li><button>روابط عمومی</button></li>
-                    <li><button>مجتمع تربیتی</button></li>
-                    <li><button>مرکز تحقیقات</button></li>
-                    <li><button>بهانه وصل</button></li>
-                    <li><button>سرای هدایت</button></li>
-                    <li><button>مدیریت امور مالی</button></li>
-                    <li><button>موسسه رضوان</button></li>
+                    <li><button>درباره ما</button></li>
+                    <li><button>مراسمات</button></li>
+                    <li><button>رسانه</button></li>
+                    <li><button>چهارتا از مسئولین</button></li>
                   </ul>
                 </nav>
                 <div class="optionsContainer">
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -251,8 +266,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -278,8 +294,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -305,8 +322,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -332,8 +350,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -359,8 +378,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -386,8 +406,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -413,8 +434,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -440,8 +462,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -467,8 +490,9 @@
                   <div class="item">
                     <a href="#" class="imgCont">
                       <img
-                        src="assets/images/photo9817379719-600x400.jpg"
-                        alt=""
+                        loading="lazy"
+                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
+                        alt="xxx"
                       />
                     </a>
                     <div class="content">
@@ -498,20 +522,23 @@
         </div>
       </section>
       <section class="space"></section>
+      <section class="sliderStorysSec">
+        <div class="sliderStorysSec"></div>
+      </section>
     </main>
     <footer>
       <section>
         <div class="container">
           <div class="footerDiv">
             <div class="firstDiv">
-              <a href="./index.html" class="iconSite">
-                <img src="assets/images/icons/siteIcon.png" alt="xxx" />
-              </a>
               <nav>
+                <a href="./index.html" class="iconSite">
+                  <img src="assets/images/icons/siteIcon.png" alt="xxx" />
+                </a>
                 <ul>
                   <li class="active"><a href="./index.html">صفحه اصلی</a></li>
                   <li><a href="#">مجالس ثقلین</a></li>
-                  <li><a href="#">چهارتا مسؤلین</a></li>
+                  <li><a href="#">موسسه رضوان</a></li>
                   <li><a href="#">مجتمع تربیتی</a></li>
                   <li><a href="#">مرکز تحقیقات</a></li>
                   <li><a href="#">سرای هدایت</a></li>
@@ -522,25 +549,58 @@
               <div class="soshalMedia">
                 <a target="_blank" href="https://eitaa.com/maktabalzahra_ab/">
                   <img
+                    loading="lazy"
                     src="assets/svgs/logo-eitaa-app-download-png-vector-Toranjlogo (1).svg"
                     alt="xxx"
                   />
-                  <span>کانال رسمی ایتا</span>
                 </a>
-                <a target="_blank" href="#">
-                  <img src="assets/svgs/2.svg" alt="xxx" />
-                  <span>ارتباط با هیئت</span>
-                </a>
-                <a target="_blank" href="#">
+                <a target="_blank" href="https://ble.ir/maktabalzahra_ab/">
                   <img
-                    style="background-color: #fff"
-                    src="assets/svgs/logo--color-black--without_text.svg"
+                    loading="lazy"
+                    src="https://gameshop.iapp.ir/site.php?fileSrc=images/bale-color.png"
                     alt="xxx"
                   />
-                  <span>کانال هیئت در آپارات</span>
+                </a>
+                <a target="_blank" href="https://zil.ink/maktabalzahra_ab/">
+                  <img
+                    loading="lazy"
+                    src="https://gameshop.iapp.ir/site.php?fileSrc=images/Soroush-color.png"
+                    alt="xxx"
+                  />
+                </a>
+                <a target="_blank" href="https://rubika.ir/maktabalzahra_ab/">
+                  <img
+                    loading="lazy"
+                    src="https://gameshop.iapp.ir/site.php?fileSrc=images/146-GraFa-1.png"
+                    alt="xxx"
+                  />
+                </a>
+                <a target="_blank" href="https://t.me/maktabalzahra_ab/">
+                  <img
+                    loading="lazy"
+                    src="https://gameshop.iapp.ir/site.php?fileSrc=images/telegram_logo_icon_147228.png"
+                    alt="xxx"
+                  />
+                </a>
+                <a target="_blank" href="#">
+                  <img loading="lazy" src="assets/svgs/2.svg" alt="xxx" />
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.aparat.com/maktabalzahra_ab"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://gameshop.iapp.ir/site.php?fileSrc=images/لوگو آپارات.png"
+                    alt="xxx"
+                  />
                 </a>
                 <a target="_blank" href="mailTo:hosseinderees7@gmail.com">
-                  <img src="assets/svgs/gmailpng.parspng.com-3.svg" alt="xxx" />
+                  <img
+                    loading="lazy"
+                    src="assets/svgs/gmailpng.parspng.com-3.svg"
+                    alt="xxx"
+                  />
                   <span>ارتباط با مدیریت</span>
                 </a>
               </div>
@@ -557,12 +617,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+
     <script defer src="scripts/main.js"></script>
     <script defer src="scripts/home.js"></script>
   </body>
