@@ -32,7 +32,7 @@ async function checkItems() {
       : [];
     return;
   }
-  let data = await getData("../../assets/json/searchResult.json");
+  let data = await getData("./site.php?json=searchResult");
   window.location.hash = searchValue;
   titlePage.textContent = searchValue;
   searchInput.value = searchValue;

@@ -16,16 +16,7 @@ async function main() {
     homePageSlider2,
     homePageSlider3,
     homePageLastFetch,
-  } = await (
-    await fetch(
-      "https://gameshop.iapp.ir/site.php?fileSrc=json/allRequestsData.json",
-      {
-        headers: {
-          cross: "no-Cross",
-        },
-      }
-    )
-  ).json();
+  } = await (await fetch("../../site.php?json=allRequestsData")).json();
 
   console.log(homePageSlider1);
   let swiperOptions = {
