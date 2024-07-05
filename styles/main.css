@@ -75,6 +75,9 @@ header section > div .headerDiv .highDisplayShoing ul {
 header section > div .headerDiv .highDisplayShoing ul li {
   width: 100%;
 }
+header section > div .headerDiv .highDisplayShoing ul li button {
+  padding: 0 20px;
+}
 header section > div .headerDiv .highDisplayShoing ul li:hover a {
   color: #ffff00;
 }
@@ -160,7 +163,8 @@ header section > div .headerDiv .lowDisplayShoing .siteIcon img {
   max-height: 50px;
   border-radius: 50%;
 }
-header section > div .headerDiv .lowDisplayShoing .searchIcon {
+header section > div .headerDiv .highDisplayShoing ul li button,
+header section > div .headerDiv .searchIcon {
   background-color: transparent;
   border: 0;
   font-size: 18px;
@@ -168,7 +172,7 @@ header section > div .headerDiv .lowDisplayShoing .searchIcon {
   flex-basis: 10%;
   height: 100%;
 }
-header section > div .headerDiv .lowDisplayShoing .searchCont {
+header section > div .headerDiv .searchCont {
   width: 100%;
   height: 0;
   display: flex;
@@ -180,19 +184,19 @@ header section > div .headerDiv .lowDisplayShoing .searchCont {
   transition: height 0.5s;
   box-shadow: 0 0 4px #0000006e;
 }
-header section > div .headerDiv .lowDisplayShoing .searchCont.emptySearch {
+header section > div .headerDiv .searchCont.emptySearch {
   border: 2px solid var(--first-slider-border-color);
 }
-header section > div .headerDiv .lowDisplayShoing .searchCont.active {
+header section > div .headerDiv .searchCont.active {
   height: 50px;
 }
-header section > div .headerDiv .lowDisplayShoing .searchCont input {
+header section > div .headerDiv .searchCont input {
   width: 100%;
   outline: 0;
   border: 0;
   padding: 5px 20px;
 }
-header section > div .headerDiv .lowDisplayShoing .searchCont button {
+header section > div .headerDiv .searchCont button {
   padding: 5px;
   font-size: 25px;
   background-color: transparent;
@@ -291,6 +295,10 @@ footer section > div .footerDiv nav ul li a {
 }
 footer section > div .footerDiv nav a {
   color: #fff;
+}
+footer section > div .footerDiv .titleFooter {
+  font-size: 20px;
+  padding: 20px 0;
 }
 footer section > div .footerDiv .soshalMedia {
   width: 100%;

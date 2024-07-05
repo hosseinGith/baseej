@@ -1,5 +1,7 @@
 const searchResultsCont = document.querySelector("#searchResultsCont");
 const titlePage = document.querySelector("title");
+const searchInput = document.querySelector("#searchInput");
+
 let searchValue = localStorage.getItem("search");
 let emptyContent = [];
 emptyContent.push(searchResultsCont.querySelector(".emptyResult"));
@@ -14,7 +16,6 @@ function createItems(item) {
   const a = document.createElement("a");
   const img = document.createElement("img");
   const span = document.createElement("span");
-
   img.src = item.imgSrc;
   span.textContent = item.title;
   a.classList.add("item");
@@ -34,6 +35,8 @@ async function checkItems() {
   let data = await getData("../../assets/json/searchResult.json");
   window.location.hash = searchValue;
   titlePage.textContent = searchValue;
+  searchInput.value = searchValue;
+
   data.forEach((item, index) => {
     if (
       String(item.title).includes(searchValue) ||

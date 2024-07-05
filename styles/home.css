@@ -324,6 +324,14 @@ main section.lastSection div > div.lastSectionDiv .optionsContainer {
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
+  max-height: max-content;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+main section.lastSection div > div.lastSectionDiv .optionsContainer .item {
+  transition: all 0.5s;
+  max-height: 400px;
+  opacity: 1;
 }
 main
   section.lastSection
@@ -427,5 +435,38 @@ main section.space {
 @media screen and (width >992px) {
   main section.lastSection div > div.lastSectionDiv {
     grid-template-columns: 15% 85%;
+  }
+}
+/* .heightZero .item {
+  max-height: 0;
+  opacity: 0;
+  animation: heightZero 1s linear;
+} */
+.heightZero {
+  opacity: 0;
+}
+.heightZero .item {
+  max-height: 0px;
+  opacity: 0;
+  animation: heightZero 0.5s linear;
+}
+.heightDefault .item {
+  max-height: 400px;
+  animation: heightDefault 0.5s linear;
+}
+@keyframes heightZero {
+  0% {
+    max-height: 400px;
+  }
+  100% {
+    max-height: 0px;
+  }
+}
+@keyframes heightDefault {
+  0% {
+    max-height: 0px;
+  }
+  100% {
+    max-height: 400px;
   }
 }

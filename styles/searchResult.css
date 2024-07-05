@@ -40,4 +40,5 @@ main section > div #searchResultsCont .item img {
 }
 main section > div #searchResultsCont .item span {
   flex-basis: 5%;
+  direction: rtl;
 }

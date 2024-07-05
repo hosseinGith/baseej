@@ -5,6 +5,10 @@ const searchIcon = document.querySelector(".searchIcon");
 const searchCont = document.querySelector(".searchCont");
 const closeSearch = document.querySelector(".closeSearch");
 
+$("#searchBtn").on("click", () => {
+  searchCont.classList.add("active");
+  console.log(1);
+});
 searchIcon.addEventListener("click", () => {
   searchCont.classList.add("active");
 });

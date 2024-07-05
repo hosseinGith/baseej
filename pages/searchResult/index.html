@@ -30,7 +30,7 @@
           <div class="headerDiv">
             <nav class="highDisplayShoing">
               <ul>
-                <li><a href="../../index.html">صفحه اصلی</a></li>
+                <li class="active"><a href="../../index.html">صفحه اصلی</a></li>
                 <li><a href="#">مجالس ثقلین</a></li>
                 <li><a href="#">موسسه رضوان</a></li>
                 <li><a href="#">مجتمع تربیتی</a></li>
@@ -45,9 +45,17 @@
                 <li><a href="#">مرکز تحقیقات</a></li>
                 <li><a href="#">سرای هدایت</a></li>
                 <li><a href="#">مدیریت مالی</a></li>
-                <li><a href="#">خواهران</a></li>
+                <li>
+                  <button id="searchBtn">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </li>
               </ul>
             </nav>
+            <form class="searchCont">
+              <input type="text" id="searchInput" placeholder="جستجو..." />
+              <button type="button" class="closeSearch fa fa-remove"></button>
+            </form>
             <div class="lowDisplayShoing">
               <button class="habergerIcon">
                 <span></span>
@@ -60,22 +68,19 @@
               <button class="searchIcon">
                 <i class="fa fa-search"></i>
               </button>
-              <form class="searchCont">
-                <input type="text" id="searchInput" placeholder="جستجو ..." />
-                <button type="button" class="closeSearch fa fa-remove"></button>
-              </form>
             </div>
             <menu class="mainMenu">
               <nav>
                 <ul>
-                  <li><a href="../../index.html">صفحه اصلی</a></li>
+                  <li class="active">
+                    <a href="../../index.html">صفحه اصلی</a>
+                  </li>
                   <li><a href="#">مجالس ثقلین</a></li>
                   <li><a href="#">موسسه رضوان</a></li>
                   <li><a href="#">مجتمع تربیتی</a></li>
                   <li><a href="#">مرکز تحقیقات</a></li>
                   <li><a href="#">سرای هدایت</a></li>
                   <li><a href="#">مدیریت مالی</a></li>
-                  <li><a href="#">خواهران</a></li>
                 </ul>
               </nav>
             </menu>
@@ -99,12 +104,14 @@
         <div class="container">
           <div class="footerDiv">
             <div class="firstDiv">
-              <a href="./index.html" class="iconSite">
-                <img src="../../assets/images/icons/siteIcon.png" alt="xxx" />
-              </a>
               <nav>
+                <a href="../../index.html" class="iconSite">
+                  <img src="../../assets/images/icons/siteIcon.png" alt="xxx" />
+                </a>
                 <ul>
-                  <li class="active"><a href="./index.html">صفحه اصلی</a></li>
+                  <li class="active">
+                    <a href="../../index.html">صفحه اصلی</a>
+                  </li>
                   <li><a href="#">مجالس ثقلین</a></li>
                   <li><a href="#">موسسه رضوان</a></li>
                   <li><a href="#">مجتمع تربیتی</a></li>
@@ -114,29 +121,66 @@
                   <li><a href="#">خواهران</a></li>
                 </ul>
               </nav>
+              <div class="titleFooter">
+                <span>مجموعه تربیتی مکتب الزهراء</span>
+              </div>
               <div class="soshalMedia">
                 <a target="_blank" href="https://eitaa.com/maktabalzahra_ab/">
                   <img
+                    loading="lazy"
                     src="../../assets/svgs/logo-eitaa-app-download-png-vector-Toranjlogo (1).svg"
                     alt="xxx"
                   />
-                  <span>کانال رسمی ایتا</span>
                 </a>
-                <a target="_blank" href="#">
-                  <img src="../../assets/svgs/2.svg" alt="xxx" />
-                  <span>ارتباط با هیئت</span>
+                <a target="_blank" href="https://ble.ir/maktabalzahra_ab/">
+                  <img
+                    loading="lazy"
+                    src="../../assets/images/icons/bale-color.png"
+                    alt="xxx"
+                  />
+                </a>
+                <a target="_blank" href="https://splus.ir/maktabalzahra_ab/">
+                  <img
+                    loading="lazy"
+                    src="../../assets/images/icons/Soroush-color.png"
+                    alt="xxx"
+                  />
+                </a>
+                <a target="_blank" href="https://rubika.ir/maktabalzahra_ab/">
+                  <img
+                    loading="lazy"
+                    src="../../assets/images/icons/146-GraFa-1.png"
+                    alt="xxx"
+                  />
+                </a>
+                <a target="_blank" href="https://t.me/maktabalzahra_ab/">
+                  <img
+                    loading="lazy"
+                    src="../../assets/images/icons/telegram_logo_icon_147228.png"
+                    alt="xxx"
+                  />
                 </a>
                 <a target="_blank" href="#">
                   <img
-                    style="background-color: #fff"
-                    src="../../assets/svgs/logo--color-black--without_text.svg"
+                    loading="lazy"
+                    src="../../assets/images/icons/اینستاگرام.png"
                     alt="xxx"
                   />
-                  <span>کانال هیئت در آپارات</span>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.aparat.com/maktabalzahra_ab"
+                >
+                  <img
+                    loading="lazy"
+                    src="../../assets/images/icons/لوگو آپارات.png"
+                    alt="xxx"
+                  />
                 </a>
                 <a target="_blank" href="mailTo:hosseinderees7@gmail.com">
                   <img
-                    src="../../assets/svgs/gmailpng.parspng.com-3.svg"
+                    loading="lazy"
+                    src="../../assets/images/icons/ارتباط با مسئولین.png"
                     alt="xxx"
                   />
                   <span>ارتباط با مدیریت</span>
@@ -153,7 +197,12 @@
         </div>
       </section>
     </footer>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="../../scripts/main.js"></script>
     <script src="../../scripts/searchResult.js"></script>
   </body>

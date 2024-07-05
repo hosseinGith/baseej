@@ -3,8 +3,12 @@
   <head>
     <link rel="preload" href="styles/home.css" as="style" />
     <link rel="preload" href="styles/main.css" as="style" />
-    <link rel="preload" href="scripts/main.js" as="script" />
-    <link rel="preload" href="scripts/home.js" as="script" />
+    <link
+      rel="preload"
+      href="assets/images/icons/siteIcon.png"
+      as="image"
+      type="image/png"
+    />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,9 +61,17 @@
                 <li><a href="#">مرکز تحقیقات</a></li>
                 <li><a href="#">سرای هدایت</a></li>
                 <li><a href="#">مدیریت مالی</a></li>
-                <li><a href="#">خواهران</a></li>
+                <li>
+                  <button id="searchBtn">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </li>
               </ul>
             </nav>
+            <form class="searchCont">
+              <input type="text" id="searchInput" placeholder="جستجو..." />
+              <button type="button" class="closeSearch fa fa-remove"></button>
+            </form>
             <div class="lowDisplayShoing">
               <button class="habergerIcon">
                 <span></span>
@@ -72,10 +84,6 @@
               <button class="searchIcon">
                 <i class="fa fa-search"></i>
               </button>
-              <form class="searchCont">
-                <input type="text" id="searchInput" placeholder="جستجو..." />
-                <button type="button" class="closeSearch fa fa-remove"></button>
-              </form>
             </div>
             <menu class="mainMenu">
               <nav>
@@ -87,7 +95,6 @@
                   <li><a href="#">مرکز تحقیقات</a></li>
                   <li><a href="#">سرای هدایت</a></li>
                   <li><a href="#">مدیریت مالی</a></li>
-                  <li><a href="#">خواهران</a></li>
                 </ul>
               </nav>
             </menu>
@@ -226,296 +233,15 @@
               </a>
               <div class="itemsCont">
                 <nav class="options">
-                  <ul>
-                    <li class="active"><button>همه</button></li>
-                    <li><button>درباره ما</button></li>
-                    <li><button>مراسمات</button></li>
-                    <li><button>رسانه</button></li>
-                    <li><button>چهارتا از مسئولین</button></li>
+                  <ul id="lastSectTypeShow">
+                    <li class="active"><button value="public">همه</button></li>
+                    <li><button value="aboutUs">درباره ما</button></li>
+                    <li><button value="ceremonies">مراسمات</button></li>
+                    <li><button value="soshalMedia">رسانه</button></li>
+                    <li><button value="authorities">چارت مسئولین</button></li>
                   </ul>
                 </nav>
-                <div class="optionsContainer">
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="https://gameshop.iapp.ir/site.php?fileSrc=images/photo9817379719-600x400.jpg"
-                        alt="xxx"
-                      />
-                    </a>
-                    <div class="content">
-                      <div class="aboutItem">
-                        <div class="from">
-                          <span>موسسه رضوان هدایت</span>
-                          <div class="date">
-                            <span>4 روز پیش</span>
-                          </div>
-                        </div>
-                        <a href="#">
-                          <h2 class="title">اولین همایش قوه ها</h2>
-                        </a>
-                        <div class="text">
-                          <p>
-                            به گزارش روابط عمومی هیئت رایةالهدی یزد اولین همایش
-                            آرامش قوها با…
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div class="optionsContainer"></div>
               </div>
             </div>
           </div>
@@ -543,9 +269,11 @@
                   <li><a href="#">مرکز تحقیقات</a></li>
                   <li><a href="#">سرای هدایت</a></li>
                   <li><a href="#">مدیریت مالی</a></li>
-                  <li><a href="#">خواهران</a></li>
                 </ul>
               </nav>
+              <div class="titleFooter">
+                <span>مجموعه تربیتی مکتب الزهراء</span>
+              </div>
               <div class="soshalMedia">
                 <a target="_blank" href="https://eitaa.com/maktabalzahra_ab/">
                   <img
@@ -561,7 +289,7 @@
                     alt="xxx"
                   />
                 </a>
-                <a target="_blank" href="https://zil.ink/maktabalzahra_ab/">
+                <a target="_blank" href="https://splus.ir/maktabalzahra_ab/">
                   <img
                     loading="lazy"
                     src="https://gameshop.iapp.ir/site.php?fileSrc=images/Soroush-color.png"
@@ -583,7 +311,11 @@
                   />
                 </a>
                 <a target="_blank" href="#">
-                  <img loading="lazy" src="assets/svgs/2.svg" alt="xxx" />
+                  <img
+                    loading="lazy"
+                    src="https://gameshop.iapp.ir/site.php?fileSrc=images/اینستاگرام.png"
+                    alt="xxx"
+                  />
                 </a>
                 <a
                   target="_blank"
@@ -598,7 +330,7 @@
                 <a target="_blank" href="mailTo:hosseinderees7@gmail.com">
                   <img
                     loading="lazy"
-                    src="assets/svgs/gmailpng.parspng.com-3.svg"
+                    src="https://gameshop.iapp.ir/site.php?fileSrc=images/ارتباط با مسئولین.png"
                     alt="xxx"
                   />
                   <span>ارتباط با مدیریت</span>
@@ -615,9 +347,12 @@
         </div>
       </section>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script defer src="scripts/main.js"></script>
     <script defer src="scripts/home.js"></script>
   </body>
