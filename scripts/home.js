@@ -195,22 +195,20 @@ async function main() {
       }, 1000);
     }
   }
+  function changeSVarValue(vari, data) {
+    vari = data[vari];
+  }
   createElementSlider1(homePageSlider1);
   createElementSlider2(homePageSlider2);
   mainPageImage(homePageSlider3);
   complateCreateFlageItems(homePageLastFetch, "public");
   setInterval(async () => {
     data = await (await fetch("./site.php?json=allRequestsData")).json();
-    let {
-      homePageSlider1,
-      homePageSlider2,
-      homePageSlider3,
-      homePageLastFetch,
-    } = data;
-    createElementSlider1(homePageSlider1);
-    createElementSlider2(homePageSlider2);
-    mainPageImage(homePageSlider3);
-    complateCreateFlageItems(homePageLastFetch, "public");
+
+    changeSVarValue(homePageSlider1, data);
+    changeSVarValue(homePageSlider2, data);
+    changeSVarValue(homePageSlider3, data);
+    changeSVarValue(homePageLastFetch, data);
   }, 10000);
   searchCont.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -228,7 +226,7 @@ async function main() {
     });
   });
   $("#lastSectTypeShow li button").on("click", function () {
-    complateCreateFlageItems(this.value);
+    complateCreateFlageItems(homePageLastFetch, this.value);
   });
 }
 document.addEventListener("DOMContentLoaded", main);
