@@ -11,14 +11,9 @@ async function main() {
   );
   let timeOutLastSec = null;
   // toISOString
-  const {
-    homePageSlider1,
-    homePageSlider2,
-    homePageSlider3,
-    homePageLastFetch,
-  } = await (await fetch("../../site.php?json=allRequestsData")).json();
+  let { homePageSlider1, homePageSlider2, homePageSlider3, homePageLastFetch } =
+    await (await fetch("./site.php?json=allRequestsData")).json();
 
-  console.log(homePageSlider1);
   let swiperOptions = {
     direction: "horizontal",
     rtl: true,
@@ -78,29 +73,32 @@ async function main() {
     container.appendChild(swiper_slide);
     div_divImg_img.src = data.imgSrc;
   }
-  async function createElementSlider1() {
+  async function createElementSlider1(data) {
     const swiper_wrapper = document.createElement("div");
     swiper_wrapper.classList.add("swiper-wrapper");
+    sliderCont.innerHTML = "";
     sliderCont.appendChild(swiper_wrapper);
-    homePageSlider1.forEach((item) => {
+    data.forEach((item) => {
       createItems(item, swiper_wrapper);
     });
     new Swiper(".sliderCont", { ...swiperOptions, slidesPerView: 3 });
     sliderCont.classList.add("swiper");
   }
-  async function createElementSlider2() {
+  async function createElementSlider2(data) {
     const swiper_wrapper = document.createElement("div");
     swiper_wrapper.classList.add("swiper-wrapper");
+    sliderCont2.innerHTML = "";
     sliderCont2.appendChild(swiper_wrapper);
-    homePageSlider2.forEach((item) => {
+    data.forEach((item) => {
       createItems(item, swiper_wrapper);
     });
     new Swiper(".sliderCont2", swiperOptions);
 
     sliderCont2.classList.add("swiper");
   }
-  async function mainPageImage() {
-    homePageSlider3.forEach((item) => {
+  async function mainPageImage(data) {
+    sliderCont3.innerHTML = "";
+    data.forEach((item) => {
       const div = document.createElement("div");
       const div_divImg = document.createElement("div");
       const div_divImg_img = document.createElement("img");
@@ -115,10 +113,10 @@ async function main() {
       div_divImg_img.src = item.imgSrc;
     });
   }
-  function createFlageItems(property) {
-    if (!homePageLastFetch.hasOwnProperty(property)) return;
+  function createFlageItems(data, property) {
+    if (!data.hasOwnProperty(property)) return;
     optionsContainer.innerHTML = "";
-    homePageLastFetch[property].forEach((json) => {
+    data[property].forEach((json) => {
       let date = json.timeOut;
       date = new Date().getTime() - new Date(date).getTime();
       let calculateDate = Math.round(date / (1000 * 3600 * 24));
@@ -174,10 +172,10 @@ async function main() {
       optionsContainer.innerHTML += item;
     });
   }
-  function complateCreateFlageItems(property) {
+  function complateCreateFlageItems(data, property) {
     if (timeOutLastSec) clearInterval(timeOutLastSec);
     timeOutLastSec = null;
-    if (homePageLastFetch[property].length < 1) {
+    if (data[property].length < 1) {
       optionsContainer.classList.add("heightZero");
       timeOutLastSec = setTimeout(() => {
         optionsContainer.classList.remove("heightZero");
@@ -193,18 +191,31 @@ async function main() {
             optionsContainer.classList.remove("heightDefault");
           });
         }
-        createFlageItems(property);
+        createFlageItems(data, property);
       }, 1000);
     }
   }
-  createElementSlider1();
-  createElementSlider2();
-  mainPageImage();
-  complateCreateFlageItems("public");
+  createElementSlider1(homePageSlider1);
+  createElementSlider2(homePageSlider2);
+  mainPageImage(homePageSlider3);
+  complateCreateFlageItems(homePageLastFetch, "public");
+  setInterval(async () => {
+    data = await (await fetch("./site.php?json=allRequestsData")).json();
+    let {
+      homePageSlider1,
+      homePageSlider2,
+      homePageSlider3,
+      homePageLastFetch,
+    } = data;
+    createElementSlider1(homePageSlider1);
+    createElementSlider2(homePageSlider2);
+    mainPageImage(homePageSlider3);
+    complateCreateFlageItems(homePageLastFetch, "public");
+  }, 10000);
   searchCont.addEventListener("submit", (e) => {
     e.preventDefault();
     let a = document.createElement("a");
-    a.href = "./pages/searchResult/index.html";
+    a.href = "./pages/searchResult/";
     localStorage.setItem("search", searchCont.children[0].value);
     a.click();
   });
