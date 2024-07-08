@@ -45,13 +45,7 @@ async function main() {
     let data = await (await fetch(api)).json();
     return data;
   }
-  function swiperTemplate() {
-    // <div class="swiper-wrapper">
-    //   <div class="swiper-slide">Slide 1</div>
-    //   <div class="swiper-slide">Slide 2</div>
-    //   <div class="swiper-slide">Slide 3</div>
-    // </div>;
-  }
+
   function createItems(data, container) {
     const div = document.createElement("div");
     const div_divImg = document.createElement("div");
@@ -117,7 +111,7 @@ async function main() {
     if (!data.hasOwnProperty(property)) return;
     optionsContainer.innerHTML = "";
     data[property].forEach((json) => {
-      let date = json.timeOut;
+      let date = json.date;
       date = new Date().getTime() - new Date(date).getTime();
       let calculateDate = Math.round(date / (1000 * 3600 * 24));
       let type = "روز";
@@ -162,7 +156,7 @@ async function main() {
                         </a>
                         <div class="text">
                           <p>
-                          ${json.longText}
+                          ${json.desc}
                           </p>
                         </div>
                       </div>
@@ -195,21 +189,12 @@ async function main() {
       }, 1000);
     }
   }
-  function changeSVarValue(vari, data) {
-    vari = data[vari];
-  }
+
   createElementSlider1(homePageSlider1);
   createElementSlider2(homePageSlider2);
   mainPageImage(homePageSlider3);
   complateCreateFlageItems(homePageLastFetch, "public");
-  setInterval(async () => {
-    data = await (await fetch("./site.php?json=allRequestsData")).json();
 
-    changeSVarValue(homePageSlider1, data);
-    changeSVarValue(homePageSlider2, data);
-    changeSVarValue(homePageSlider3, data);
-    changeSVarValue(homePageLastFetch, data);
-  }, 10000);
   searchCont.addEventListener("submit", (e) => {
     e.preventDefault();
     let a = document.createElement("a");
@@ -225,7 +210,10 @@ async function main() {
       item.classList.add("active");
     });
   });
-  $("#lastSectTypeShow li button").on("click", function () {
+  $("#lastSectTypeShow li button").on("click", async function () {
+    optionsContainer.classList.add("heightZero");
+    let res = await (await fetch("./site.php?json=allRequestsData")).json();
+    homePageLastFetch = res.homePageLastFetch;
     complateCreateFlageItems(homePageLastFetch, this.value);
   });
 }

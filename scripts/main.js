@@ -5,6 +5,8 @@ const searchIcon = document.querySelector(".searchIcon");
 const searchCont = document.querySelector(".searchCont");
 const closeSearch = document.querySelector(".closeSearch");
 
+fetch("./site.php?seen=1").then().then();
+
 $("#searchBtn").on("click", () => {
   searchCont.classList.add("active");
   console.log(1);

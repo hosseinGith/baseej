@@ -11,13 +11,30 @@ async function getData(api) {
   let data = await (await fetch(api)).json();
   return data;
 }
+function newArrFromLetters(string) {
+  let letters = [];
+  let lettersIndex = 0;
+  let text = "";
+  let ind = 1;
+
+  Array.from(string).forEach((lett, index) => {
+    if (lett !== " ") {
+      text += lett;
+      letters[lettersIndex] = text;
+    } else {
+      lettersIndex++;
+      text = "";
+    }
+  });
+  return letters;
+}
 
 function createItems(item) {
   const a = document.createElement("a");
   const img = document.createElement("img");
   const span = document.createElement("span");
   img.src = item.imgSrc;
-  span.textContent = item.title;
+  span.textContent = item.underImgText;
   a.classList.add("item");
   a.appendChild(img);
   a.appendChild(span);
@@ -33,14 +50,28 @@ async function checkItems() {
     return;
   }
   let data = await getData("../../site.php?json=searchResult");
-  window.location.hash = searchValue;
   titlePage.textContent = searchValue;
   searchInput.value = searchValue;
+  let arrFromSearchValue = newArrFromLetters(searchValue);
+  window.location.hash = searchValue;
 
-  data.forEach((item, index) => {
+  data.forEach((item) => {
+    let isFound = false;
+    arrFromSearchValue.forEach((search, index) => {
+      if (item.underImgText && String(item.underImgText).includes(search)) {
+        isFound = true;
+      } else if (item.hashTag && String(item.hashTag).includes(search)) {
+        isFound = true;
+      }
+    });
     if (
-      String(item.title).includes(searchValue) ||
-      String(item.hasTags).includes(searchValue.replace(" ", "_"))
+      (item.underImgText &&
+        (String(item.underImgText).includes(searchValue) ||
+          String(searchValue).includes(item.underImgText))) ||
+      (item.hashTag &&
+        (String(searchValue).includes(item.hashTag) ||
+          String(item.hashTag).includes(searchValue))) ||
+      isFound
     ) {
       searchResultsCont.querySelector(".emptyResult")
         ? searchResultsCont.querySelector(".emptyResult").remove()

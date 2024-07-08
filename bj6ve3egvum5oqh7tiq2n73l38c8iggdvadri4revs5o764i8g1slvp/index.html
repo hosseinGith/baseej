@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn;
+      }
+      body {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+      table {
+        width: 100%;
+      }
+      table tr {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        padding: 20px 10px;
+      }
+      table tr td {
+        padding: 0 10px;
+        width: 100%;
+      }
+      table tr td > div {
+        width: 100%;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #000;
+        gap: 20px;
+      }
+
+      table tr td > div img {
+        width: 100%;
+        max-width: 300px;
+      }
+      table tr td > div.slider1 .imgCont {
+        width: 100%;
+        max-width: 75px;
+        max-height: 75px;
+        border: 3px solid red;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      table tr td > div.slider1 .imgCont img {
+        width: 69px;
+        height: 69px;
+      }
+      table tr td > div.slider2 .imgCont {
+        border: 0;
+        width: 140px;
+        height: 198px;
+      }
+      table tr td > div.slider2 .imgCont img {
+        filter: brightness(0.8);
+        width: 140px;
+        height: 198px;
+      }
+
+      form {
+        display: flex;
+        justify-content: center;
+      }
+      form label {
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 20px;
+      }
+      @media screen and (width<1026px) {
+        table thead {
+          display: none;
+        }
+        table tr {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      button {
+        background-color: green;
+        font-weight: bold;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      input {
+        font-weight: bold;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 10px;
+      }
+      .loginParent {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(1px);
+        background-color: rgba(0, 0, 0, 0.541);
+      }
+      .loginParent .login {
+        width: 300px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        gap: 10px;
+        border-radius: 20px;
+        padding: 10px;
+        align-items: center;
+      }
+      .loading {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(1px);
+        background-color: rgba(0, 0, 0, 0.541);
+        display: none;
+      }
+      .loading.active {
+        display: flex;
+      }
+      .loading .circle {
+        width: 100px;
+        height: 100px;
+        border: 20px solid #16db04;
+        border-top: 20px solid transparent;
+        border-radius: 50%;
+        animation: circle 1s ease infinite;
+      }
+      .dangerLink {
+        padding: 10px 20px;
+        border-radius: 20px;
+        background-color: rgb(196, 46, 46);
+        width: max-content;
+        display: inline-block;
+        color: #08043a;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      @keyframes circle {
+        100% {
+          rotate: 360deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="allRequets"></div>
+    <a class="dangerLink" href="removeSlidersItem/index.html">حذف پست ها</a>
+    <table>
+      <tr>
+        <td>
+          <div class="slider1">
+            <h1>قسمت اول</h1>
+            <div class="imgCont">
+              <img class="slider1Img" src="" />
+            </div>
+            <input class="title" name="title" type="text" placeholder="عنوان" />
+            <input
+              class="hashTag"
+              name="hashTag"
+              type="text"
+              placeholder="هشتگ های پست"
+            />
+            <button
+              type="submit"
+              class="submitDoc"
+              name="submitDoc"
+              value="homePageSlider1"
+            >
+              ثبت برای قمست اول
+            </button>
+          </div>
+        </td>
+        <td>
+          <div class="slider2">
+            <h1>قسمت دوم</h1>
+            <div class="imgCont">
+              <img title="140px X 198px" class="slider1Img" src="" />
+            </div>
+            <input class="title" name="title" type="text" placeholder="عنوان" />
+            <input
+              class="hashTag"
+              name="hashTag"
+              type="text"
+              placeholder="هشتگ های پست"
+            />
+            <button
+              type="submit"
+              class="submitDoc"
+              name="submitDoc"
+              value="homePageSlider2"
+            >
+              ثبت برای قمست دوم
+            </button>
+          </div>
+        </td>
+        <td>
+          <div class="slider3">
+            <h1>قسمت سوم</h1>
+            <img class="slider1Img" src="" />
+            <input class="title" name="title" type="text" placeholder="عنوان" />
+            <input
+              class="hashTag"
+              name="hashTag"
+              type="text"
+              placeholder="هشتگ های پست"
+            />
+            <button
+              type="submit"
+              class="submitDoc"
+              name="submitDoc"
+              value="homePageSlider3"
+            >
+              ثبت برای قمست سوم
+            </button>
+          </div>
+        </td>
+        <td>
+          <div class="slider4">
+            <h1>قسمت چهرام</h1>
+            <img class="slider1Img" src="" />
+            <input class="title" name="title" type="text" placeholder="عنوان" />
+            <input
+              class="hashTag"
+              name="hashTag"
+              type="text"
+              placeholder="هشتگ های پست"
+            />
+            <input class="from" name="from" type="text" placeholder="از" />
+            <input class="desc" name="desc" type="text" placeholder="توضیحات" />
+            <select
+              name="homePageLastSectApiMode"
+              class="homePageLastSectApiMode"
+            >
+              <option value="public">همه</option>
+              <option value="aboutUs">درباره ما</option>
+              <option value="ceremonies">مراسمات</option>
+              <option value="soshalMedia">رسانه</option>
+              <option value="authorities">چارت مسئولین</option>
+              <option value="tarbiatySec">حلقات اموزشی</option>
+              <option value="teachSeson">دوره های اموزشی</option>
+            </select>
+            <button
+              type="submit"
+              class="submitDoc"
+              name="submitDoc"
+              value="homePageSlider4"
+            >
+              ثبت برای قمست چهارم
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="slider4">
+            <h1>اضافه کردن پست در سیرچ بار</h1>
+            <img class="slider1Img" src="" />
+            <input class="title" name="title" type="text" placeholder="عنوان" />
+            <input
+              class="hashTag"
+              name="hashTag"
+              type="text"
+              placeholder="هشتگ های پست"
+            />
+            <input
+              class="pageLink"
+              name="pageLink"
+              type="text"
+              placeholder="لینک صفحه"
+            />
+            <button type="submit" class="submitDoc" value="searchResult">
+              ثبت برای سیرچ
+            </button>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <form id="upload_image" method="post" enctype="multipart/form-data">
+      <input
+        accept="image/*"
+        name="fileToUpload"
+        type="file"
+        id="inputFiles"
+        style="display: none"
+      />
+      <input name="type" type="text" id="type" style="display: none" />
+      <input name="title" type="text" id="title" style="display: none" />
+      <input name="hashTag" type="text" id="hashTag" style="display: none" />
+
+      <input name="from" type="text" id="from" style="display: none" />
+      <input name="pageLink" type="text" id="pageLink" style="display: none" />
+
+      <input name="desc" type="text" id="desc" style="display: none" />
+      <input
+        name="homePageLastSectApiMode"
+        type="text"
+        id="homePageLastSectApiMode"
+        style="display: none"
+      />
+      <label for="inputFiles">انتخاب عکس</label>
+    </form>
+    <div class="loginParent">
+      <form class="login">
+        <input
+          type="text"
+          id="user_pass"
+          name="pass"
+          placeholder="پسورد را وارد کنید"
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <div class="loading">
+      <div class="circle"></div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
