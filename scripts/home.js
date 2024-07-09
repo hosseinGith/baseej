@@ -9,6 +9,8 @@ async function main() {
   const lastSectTypeShow = document.querySelectorAll(
     "#lastSectTypeShow li button"
   );
+  const aItemsCont = document.querySelectorAll("a[href='#itemsCont']");
+
   let timeOutLastSec = null;
   // toISOString
   let { homePageSlider1, homePageSlider2, homePageSlider3, homePageLastFetch } =
@@ -215,6 +217,21 @@ async function main() {
     let res = await (await fetch("./site.php?json=allRequestsData")).json();
     homePageLastFetch = res.homePageLastFetch;
     complateCreateFlageItems(homePageLastFetch, this.value);
+  });
+  $("a[href='#itemsCont']").on("click", async function () {});
+  console.log(aItemsCont);
+  aItemsCont.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      aItemsCont.forEach((it) => {
+        if (it.id !== item.id) it.parentElement.classList.remove("active");
+      });
+      item.parentElement.classList.add("active");
+      lastSectTypeShow.forEach((btn) => {
+        if (btn.value === item.id) {
+          btn.click();
+        }
+      });
+    });
   });
 }
 document.addEventListener("DOMContentLoaded", main);

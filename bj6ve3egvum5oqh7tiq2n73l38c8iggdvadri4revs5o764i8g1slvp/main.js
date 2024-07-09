@@ -59,7 +59,7 @@ async function main() {
       title_main.value = encodeURIComponent(title.value);
       hashTag_main.value = encodeURIComponent(hashTag.value);
       pageLink_main;
-      if (item.value === "homePageSlider4") {
+      if (item.value === "homePageLastFetch") {
         const from = item.parentElement.querySelector(".from");
         const desc = item.parentElement.querySelector(".desc");
         const homePageLastSectApiMode = item.parentElement.querySelector(

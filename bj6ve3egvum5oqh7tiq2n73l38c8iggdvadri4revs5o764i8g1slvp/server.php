@@ -42,7 +42,6 @@ function addNewPost($filePath, $property, $newPostData, $isPop = false, $propert
         array_push($oldFile->$property->$property2, $newPostData);
     else
         array_push($oldFile->$property, $newPostData);
-    print_r($oldFile);
     $file = fopen($filePath, "w");
     fwrite($file, json_encode($oldFile));
     fclose($file);
@@ -95,7 +94,7 @@ function addPostHandler($target_dir_other_files, $imgName)
             'id' => $id
         );
         addNewPost("$target_dir_other_files/json/allRequestsData.ini", $_GET["type"], $object, true);
-    } else {
+    } else if ($_GET["type"] === "homePageLastFetch") {
         checkGet("from");
         checkGet("desc");
         $object = array(

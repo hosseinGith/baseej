@@ -26,10 +26,14 @@ function addNewPost($filePath)
     fclose($file);
 }
 if (isset($_GET["fileSrc"])) {
+    header('Content-Type: image/image');
     $fileSrc = $_GET["fileSrc"];
     echo file_get_contents("$target_dir_other_files/$fileSrc");
 } else if (isset($_GET["json"])) {
     $json = $_GET["json"];
+    if ($json === "main")
+        die("");
+    header('Content-Type: application/json');
     echo file_get_contents("$target_dir_other_files/json/$json.ini");
 } else if (isset($_GET["seen"])) {
     $seen = $_GET["seen"];

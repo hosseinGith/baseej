@@ -72,9 +72,7 @@ header section > div .headerDiv .highDisplayShoing ul {
   justify-content: space-between;
   align-items: center;
 }
-header section > div .headerDiv .highDisplayShoing ul li {
-  width: 100%;
-}
+
 header section > div .headerDiv .highDisplayShoing ul li button {
   padding: 0 20px;
 }
@@ -104,20 +102,24 @@ header section > div .headerDiv .lowDisplayShoing {
   justify-content: space-between;
   align-items: center;
 }
+header section > div .headerDiv .lowDisplayShoing > div {
+  flex: 1 0 10px;
+}
 header section > div .headerDiv .lowDisplayShoing .habergerIcon {
   width: 100%;
-  max-width: 50px;
-  max-height: 50px;
+}
+header section > div .headerDiv .lowDisplayShoing .habergerIcon button {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: 0;
   padding: 15px 10px;
-  height: 100px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: transparent;
-  border: 0;
-  flex-basis: 15%;
+  cursor: pointer;
 }
-header section > div .headerDiv .lowDisplayShoing .habergerIcon span {
+header section > div .headerDiv .lowDisplayShoing .habergerIcon button span {
   width: 100%;
   height: 3px;
   background-color: var(--font-color);
@@ -129,6 +131,7 @@ header
   .headerDiv.showMenu
   .lowDisplayShoing
   .habergerIcon
+  button
   span:first-child {
   transform: translate(0, 10px) rotate(141deg);
 }
@@ -138,6 +141,7 @@ header
   .headerDiv.showMenu
   .lowDisplayShoing
   .habergerIcon
+  button
   span:nth-child(2) {
   display: none;
 }
@@ -147,21 +151,34 @@ header
   .headerDiv.showMenu
   .lowDisplayShoing
   .habergerIcon
+  button
   span:last-child {
   transform: translate(0, -6px) rotate(39deg);
 }
-header section > div .headerDiv .lowDisplayShoing .siteIcon {
-  display: inline-block;
-  height: max-content;
-  flex-basis: 75%;
+header section > div .headerDiv .lowDisplayShoing > div:nth-child(2) {
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
 }
 header section > div .headerDiv .lowDisplayShoing .siteIcon img {
   max-width: 50px;
   max-height: 50px;
   border-radius: 50%;
+  vertical-align: middle;
+}
+header section > div .headerDiv .highDisplayShoing ul li {
+  flex: 1 0 10px;
+}
+header section > div .headerDiv .highDisplayShoing ul li button {
+  height: max-content;
+}
+header section > div .headerDiv .lowDisplayShoing > div:last-child {
+  display: flex;
+  justify-content: end;
+}
+header section > div .headerDiv .searchIcon {
+  padding: 10px 20px;
+  cursor: pointer;
 }
 header section > div .headerDiv .highDisplayShoing ul li button,
 header section > div .headerDiv .searchIcon {
@@ -170,7 +187,6 @@ header section > div .headerDiv .searchIcon {
   font-size: 18px;
   color: var(--font-color);
   flex-basis: 10%;
-  height: 100%;
 }
 header section > div .headerDiv .searchCont {
   width: 100%;
@@ -343,7 +359,9 @@ footer section > div .footerDiv .lastDiv p {
   header section > div .headerDiv .lowDisplayShoing {
     display: none;
   }
-
+  header section > div .headerDiv .mainMenu {
+    display: none;
+  }
   footer section > div .footerDiv nav {
     justify-content: space-between;
   }

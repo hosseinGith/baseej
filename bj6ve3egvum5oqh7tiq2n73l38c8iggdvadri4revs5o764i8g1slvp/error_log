@@ -229,3 +229,19 @@ Stack trace:
 [07-Jul-2024 15:09:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 209
 [07-Jul-2024 15:09:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 209
 [07-Jul-2024 15:09:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 209
+[08-Jul-2024 07:43:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 209
+[08-Jul-2024 07:45:41 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 07:46:41 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:27:38 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:27:50 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:27:59 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:28:08 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:28:16 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:40:37 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:44:44 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:46:09 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 09:59:05 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 44
+[08-Jul-2024 10:00:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 208
+[08-Jul-2024 12:19:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 208
+[09-Jul-2024 06:40:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 208
+[09-Jul-2024 06:47:52 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gameshop/public_html/bj6ve3egvum5oqh7tiq2n73l38c8iggdvadri4revs5o764i8g1slvp/server.php on line 208
