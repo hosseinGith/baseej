@@ -140,14 +140,29 @@ async function main() {
         calculateDate = Math.round(calculateDate / 365);
         dateString = `${calculateDate} ${type} پیش`;
       }
+      let domain = "gameshop.iapp.ir";
       const item = `
        <div class="item" id="${json.id}">
                     <a href="#" class="imgCont">
-                      <img
-                        loading="lazy"
-                        src="${json.imgSrc}"
-                        alt="xxx"
-                      />
+                      ${
+                        json.imgSrc !==
+                        "https://" + domain + "/site.php?fileSrc=images/"
+                          ? ` <img
+                          loading="lazy"
+                          src=${json.imgSrc}
+                          alt=${json.title}
+                        />`
+                          : `
+                            <iframe
+                              height="200"
+                              src="${json.pageLink}"
+                              allowfullscreen="true"
+                              webkitallowfullscreen="true"
+                              mozallowfullscreen="true"
+                              style="border: 0;"
+                            ></iframe>
+                          `
+                      }
                     </a>
                     <div class="content">
                       <div class="aboutItem">

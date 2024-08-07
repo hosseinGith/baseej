@@ -114,7 +114,7 @@ async function main() {
     optionsContainer.innerHTML = "";
     data[property].forEach((json) => {
       let date = json.date;
-      date = new Date().getTime() - date;
+      date = new Date().getTime() - new Date(date).getTime();
       let calculateDate = Math.round(date / (1000 * 3600 * 24));
       let type = "روز";
       let dateString = `${calculateDate} ${type} پیش`;
@@ -136,30 +136,14 @@ async function main() {
         calculateDate = Math.round(calculateDate / 365);
         dateString = `${calculateDate} ${type} پیش`;
       }
-      let domain = "gameshop.iapp.ir";
-
       const item = `
        <div class="item">
                     <a href="#" class="imgCont">
-                   ${
-                     json.imgSrc !==
-                     "https://" + domain + "/site.php?fileSrc=images/"
-                       ? ` <img
-                          loading="lazy"
-                          src=${json.imgSrc}
-                          alt=${json.title}
-                        />`
-                       : `
-                            <iframe
-                              height="200"
-                              src="${json.pageLink}"
-                              allowfullscreen="true"
-                              webkitallowfullscreen="true"
-                              mozallowfullscreen="true"
-                              style="border: 0;"
-                            ></iframe>
-                          `
-                   }
+                      <img
+                        loading="lazy"
+                        src="${json.imgSrc}"
+                        alt="xxx"
+                      />
                     </a>
                     <div class="content">
                       <div class="aboutItem">
@@ -242,11 +226,9 @@ async function main() {
         if (it.id !== item.id) it.parentElement.classList.remove("active");
       });
       item.parentElement.classList.add("active");
-      lastSectTypeShow.forEach((btn) => {
-        if (btn.value === item.id) {
-          btn.click();
-        }
-      });
+      if (lastSectTypeShow[index].value === item.id) {
+        lastSectTypeShow[index].click();
+      }
     });
   });
 }

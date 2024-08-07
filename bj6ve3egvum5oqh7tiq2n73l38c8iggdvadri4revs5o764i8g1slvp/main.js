@@ -13,7 +13,6 @@ async function main() {
   );
   const login = document.querySelector(".login");
   const loading = document.querySelector(".loading");
-
   let pass;
   let access;
   let isLogin = false;
@@ -54,25 +53,25 @@ async function main() {
     item.addEventListener("click", () => {
       const title = item.parentElement.querySelector(".title");
       const hashTag = item.parentElement.querySelector(".hashTag");
+      const pageLink = item.parentElement.querySelector(".pageLink");
 
+      pageLink_main.value = encodeURIComponent(pageLink.value);
       type_main.value = encodeURIComponent(item.value);
       title_main.value = encodeURIComponent(title.value);
       hashTag_main.value = encodeURIComponent(hashTag.value);
-      pageLink_main;
       if (item.value === "homePageLastFetch") {
         const from = item.parentElement.querySelector(".from");
         const desc = item.parentElement.querySelector(".desc");
         const homePageLastSectApiMode = item.parentElement.querySelector(
           ".homePageLastSectApiMode"
         );
+
+        pageLink_main.value = encodeURIComponent(pageLink.value);
         from_main.value = encodeURIComponent(from.value);
         desc_main.value = encodeURIComponent(desc.value);
         homePageLastSectApiMode_main.value = encodeURIComponent(
           homePageLastSectApiMode.value
         );
-      } else if (item.value === "searchResult") {
-        const pageLink = item.parentElement.querySelector(".pageLink");
-        pageLink_main.value = encodeURIComponent(pageLink.value);
       }
       loading.classList.add("active");
       $("#upload_image").submit();
@@ -83,31 +82,13 @@ async function main() {
     $.ajax({
       url:
         mainApi +
-        `&uploadPhoto&type=${type_main.value}&title=${
-          title_main.value
-        }&hashTag=${hashTag_main.value}&pageLink=${pageLink_main.value}&from=${
-          from_main.value
-        }&desc=${desc_main.value}&homePageLastSectApiMode=${
-          homePageLastSectApiMode_main.value
-        }&date=${new Date().toISOString()}`,
+        `&uploadPhoto&type=${type_main.value}&title=${title_main.value}&hashTag=${hashTag_main.value}&pageLink=${pageLink_main.value}&from=${from_main.value}&desc=${desc_main.value}&homePageLastSectApiMode=${homePageLastSectApiMode_main.value}`,
       method: "POST",
       data: new FormData(this),
       contentType: false,
       cache: false,
       processData: false,
       success: async function (res) {
-        console.log(
-          mainApi +
-            `&uploadPhoto&type=${type_main.value}&title=${
-              title_main.value
-            }&hashTag=${hashTag_main.value}&pageLink=${
-              pageLink_main.value
-            }&from=${from_main.value}&desc=${
-              desc_main.value
-            }&homePageLastSectApiMode=${
-              homePageLastSectApiMode_main.value
-            }&date=${new Date().toISOString()}`
-        );
         if (!/typeError/g.test(res)) {
           loading.classList.remove("active");
         }

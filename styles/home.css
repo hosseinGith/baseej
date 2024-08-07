@@ -320,7 +320,7 @@ main
 main section.lastSection div > div.lastSectionDiv .optionsContainer {
   width: 100%;
   display: grid;
-  align-items: start;
+  align-items: stretch;
   gap: 20px;
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -1,7 +1,9 @@
 <?php
 $pass = $_GET["pass"];
 $userIp = "";
-$target_dir_other_files = '../../gameshop.iapp.ir/desk/maktabAlzahra-images';
+$domainName = "gameshop.iapp.ir";
+
+$target_dir_other_files = "../../$domainName/desk/maktabAlzahra-images";
 $mainJson = json_decode(file_get_contents("$target_dir_other_files/json/main.ini"));
 $isSuccess = false;
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -39,9 +41,9 @@ function addNewPost($filePath, $property, $newPostData, $isPop = false, $propert
         array_pop($oldFile->$property);
 
     if ($property2)
-        array_push($oldFile->$property->$property2, $newPostData);
+        array_unshift($oldFile->$property->$property2, $newPostData);
     else
-        array_push($oldFile->$property, $newPostData);
+        array_unshift($oldFile->$property, $newPostData);
     $file = fopen($filePath, "w");
     fwrite($file, json_encode($oldFile));
     fclose($file);
@@ -50,7 +52,7 @@ function addNewPostForSearchResult($filePath, $newPostData)
 {
     $oldFile = file_get_contents($filePath);
     $oldFile = json_decode($oldFile);
-    array_push($oldFile, $newPostData);
+    array_unshift($oldFile, $newPostData);
     $file = fopen($filePath, "w");
     fwrite($file, json_encode($oldFile));
     fclose($file);
@@ -70,27 +72,30 @@ function checkGet($get)
     }
 
 }
-function addPostHandler($target_dir_other_files, $imgName)
+function addPostHandler($target_dir_other_files, $imgName, $domainName)
 {
     $id = uniqid('id.', true);
     $hashTag = trim($_GET["hashTag"]);
     $date = time() * 1000;
     $title = trim($_GET["title"]);
+    $pageLink = trim($_GET["pageLink"]);
     if ($_GET["type"] !== "homePageLastFetch" && $_GET["type"] !== "homePageSlider3" && $_GET["type"] !== "searchResult") {
         $object = array(
-            "imgSrc" => "https://gameshop.iapp.ir/site.php?fileSrc=images/$imgName",
+            "imgSrc" => "https://$domainName/site.php?fileSrc=images/$imgName",
             "hashTag" => $hashTag,
             "date" => $date,
             "underImgText" => $title,
+            "pageLink" => $pageLink,
             'id' => $id
         );
         addNewPost("$target_dir_other_files/json/allRequestsData.ini", $_GET["type"], $object);
     } else if ($_GET["type"] === "homePageSlider3") {
         $object = array(
-            "imgSrc" => "https://gameshop.iapp.ir/site.php?fileSrc=images/$imgName",
+            "imgSrc" => "https://$domainName/site.php?fileSrc=images/$imgName",
             "hashTag" => $hashTag,
             "date" => $date,
             "underImgText" => $title,
+            "pageLink" => $pageLink,
             'id' => $id
         );
         addNewPost("$target_dir_other_files/json/allRequestsData.ini", $_GET["type"], $object, true);
@@ -98,11 +103,12 @@ function addPostHandler($target_dir_other_files, $imgName)
         checkGet("from");
         checkGet("desc");
         $object = array(
-            "imgSrc" => "https://gameshop.iapp.ir/site.php?fileSrc=images/$imgName",
+            "imgSrc" => "https://$domainName/site.php?fileSrc=images/$imgName",
             "from" => trim($_GET["from"]),
             "date" => $date,
             "title" => $title,
             "desc" => trim($_GET["desc"]),
+            "pageLink" => $pageLink,
             'id' => $id
         );
         if ($_GET["homePageLastSectApiMode"] !== 'public')
@@ -110,17 +116,18 @@ function addPostHandler($target_dir_other_files, $imgName)
         addNewPost("$target_dir_other_files/json/allRequestsData.ini", "homePageLastFetch", $object, false, $_GET["homePageLastSectApiMode"]);
     }
     $object = array(
-        "imgSrc" => "https://gameshop.iapp.ir/site.php?fileSrc=images/$imgName",
+        "imgSrc" => "https://$domainName/site.php?fileSrc=images/$imgName",
         "hashTag" => $hashTag,
         "date" => $date,
         "underImgText" => $title,
+        "pageLink" => $pageLink,
         'id' => $id
     );
     addNewPostForSearchResult("$target_dir_other_files/json/searchResult.ini", $object);
 }
 if (isset($_GET['uploadPhoto'])) {
 
-    $target_dir = '../../gameshop.iapp.ir/desk/maktabAlzahra-images/images/';
+    $target_dir = '../../$domainName/desk/maktabAlzahra-images/images/';
 
     if (!file_exists($target_dir)) {
         mkdir($target_dir);
@@ -133,10 +140,8 @@ if (isset($_GET['uploadPhoto'])) {
     if (isset($_POST["submit"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if ($check) {
-            echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
         } else {
-            echo "typeError";
             $uploadOk = 0;
         }
     }
@@ -144,39 +149,26 @@ if (isset($_GET['uploadPhoto'])) {
     $imgName = basename($_FILES["fileToUpload"]["name"]);
 
     if (file_exists($target_file)) {
-        addPostHandler($target_dir_other_files, $imgName);
         $uploadOk = 0;
-        echo "already";
     }
     if ($_FILES["fileToUpload"]["size"] > (30 * 1048576)) {
-        echo "large";
         $uploadOk = 0;
-        return;
     }
     // Allow certain file formats
     if (
         $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif"
     ) {
-        echo "typeError";
         $uploadOk = 0;
-        return;
     }
     // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "failed";
-        return;
-        // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            addPostHandler($target_dir_other_files, $imgName);
-            echo "success";
-            return;
-        } else {
-            echo "failed";
-            return;
-        }
+    if ($uploadOk == 1) {
+        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
     }
+
+    addPostHandler($target_dir_other_files, $imgName, $domainName);
+    echo "success";
+
 } else if (isset($_GET['deletePost'])) {
     $oldFile = json_decode(file_get_contents("$target_dir_other_files/json/allRequestsData.ini"));
     $searchRes = json_decode(file_get_contents("$target_dir_other_files/json/searchResult.ini"));
